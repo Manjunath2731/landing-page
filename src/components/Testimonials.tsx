@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; // Import the Image component
 
 interface Testimonial {
   name: string;
@@ -13,19 +14,19 @@ const Testimonials: React.FC = () => {
       name: "John Doe",
       role: "Student",
       quote: "This platform changed my life! The courses are top-notch.",
-      image: "/images/user1.jpeg",
+      image: "/images/user1.jpg",
     },
     {
       name: "Jane Smith",
       role: "Developer",
       quote: "I landed my dream job after completing the web development course.",
-      image: "/images/user2.jpeg",
+      image: "/images/user2.jpg",
     },
     {
       name: "Mike Johnson",
       role: "Data Scientist",
       quote: "The data science course is the best I've ever taken.",
-      image: "/images/user3.jpeg",
+      image: "/images/user3.jpg",
     },
   ];
 
@@ -38,10 +39,18 @@ const Testimonials: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <img src={testimonial.image} alt={testimonial.name} className="w-20 h-20 rounded-full mx-auto mb-4" />
+              <div className="relative w-20 h-20 mx-auto mb-4">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-full"
+                />
+              </div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">{testimonial.name}</h3>
               <p className="text-gray-600 mb-4">{testimonial.role}</p>
-              <p className="text-gray-600">"{testimonial.quote}"</p>
+              <p className="text-gray-600">&ldquo;{testimonial.quote}&rdquo;</p>
             </div>
           ))}
         </div>
