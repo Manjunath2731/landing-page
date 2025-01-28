@@ -14,19 +14,19 @@ const Testimonials: React.FC = () => {
       name: "John Doe",
       role: "Student",
       quote: "This platform changed my life! The courses are top-notch.",
-      image: "/images/user1.jpg",
+      image: "/images/user1.jpeg",
     },
     {
       name: "Jane Smith",
       role: "Developer",
       quote: "I landed my dream job after completing the web development course.",
-      image: "/images/user2.jpg",
+      image: "/images/user2.jpeg",
     },
     {
       name: "Mike Johnson",
       role: "Data Scientist",
       quote: "The data science course is the best I've ever taken.",
-      image: "/images/user3.jpg",
+      image: "/images/user3.jpeg",
     },
   ];
 
